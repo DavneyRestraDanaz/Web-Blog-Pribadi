@@ -23,7 +23,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
             # Ganti dengan path sesuai repo kamu
             cd ~/Web-Blog-Pribadi
-            git pull origin main
+            sudo git pull origin main
             sudo cp -r * /usr/share/nginx/html/
             sudo systemctl restart nginx
           EOF
